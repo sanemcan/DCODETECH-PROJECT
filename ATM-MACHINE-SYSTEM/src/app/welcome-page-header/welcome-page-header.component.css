@@ -1,0 +1,40 @@
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #413F3D;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+           
+        .logo  img{
+            width: 40px;
+            height: auto;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .login-btn, .register-btn {
+            padding: 8px 15px;
+            background-color: #697184;
+            color:white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            
+        }
+
+        .login-btn:hover,
+        .register-btn:hover {
+            background-color: black;
+        }
+    
