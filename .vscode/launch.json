@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AtmSpringServerApplication<ATM-MACHINE>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.dcodetech.ATMMACHINE.AtmSpringServerApplication",
+            "projectName": "ATM-MACHINE",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+/************************Header Styles************************/
+header {
+    background-color: #52b788;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#logo {
+    width: auto;
+    height: 30px;
+}
+
+.right-options {
+    display: flex;
+    gap: 15px;
+}
+
+.right-options a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.right-options a i {
+    margin-right: 10px;
+}
+
+/****************************Footer Styles**************************/
+footer {
+    background-color: #40916c;
+    color: #fff;
+    padding: 20px 0;
+    width: 102%;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.footer-social-icons {
+    margin-top: 20px;
+}
+
+.footer-social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+}
