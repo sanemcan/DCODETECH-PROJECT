@@ -1,29 +1,60 @@
-<app-welcome-page-header></app-welcome-page-header>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>UserDashboard</title>
+    <title>Pin Change Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
-
-    <section class="btns-container">
-        <div class="btns">
-            <button style="margin-top: 6%; margin-right: 90px ;">ACCOUNT CREATION </button>
-            <button>MONEY TRANSFER</button>
-            <button style="margin-right: 90px;">PHONE NUMBER CHANGE</button>
-            <button>CHEQUE BOOK REQUEST</button>
-            <button style="margin-right: 90px;">PIN CHANGE</button>
-            <button>TRANSCATION HISTORY</button>
+    <!-----------------------------------HEADER ---------------------->
+    <header>
+        <div class="logo">
+            <img src="../../assets/124-removebg-preview.png" alt="Logo" id="logo">
         </div>
-    </section>
+        <div class="right-options">
+            <a href="#" title="Sign Up">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" title="Login">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </a>
+        </div>
+    </header>
 
+
+    <!-------------------------CHANGE PIN FORM-------------------------------------->
+   
+    <h1>User Dashboard</h1>
+    <div class="container">
+  
+        <div>
+            <button><img src="../../assets/circle-user-round.svg"> Creation </button>
+            <button>Transaction History</button>
+            <button>Phone Number Change</button>
+            <button>Money Transfer</button>
+            <button>Pin Change</button>
+            <button>Cheque Book Request</button>
+        </div>
+    </div>
+
+    <!-----------------------------------FOOTER ---------------------->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+    </footer>
 </body>
-<app-footer></app-footer>
-</html>
 
+</html>

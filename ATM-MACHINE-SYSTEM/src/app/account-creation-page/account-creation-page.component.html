@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+</head>
+
+<body>
+    <!-----------------------------------HEADER FOR ACCOUNT CREATION---------------------->
+    <header>
+        <div class="logo">
+            <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
+        </div>
+        <div class="right-options">
+            <a href="#" title="Sign Up">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" title="Login">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </a>
+        </div>
+    </header>
+
+
+    <!-------------------------ACCOUNT CREATION FORM-------------------------------------->
+    <div class="container">
+        <form [formGroup]="accountCreationForm">
+            <table>
+                <tr>
+                    <th colspan="2">ACCOUNT CREATION FORM</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Account Type</label>
+                        <select name="AccountType" formControlName="accountType">
+                            <option value="" disabled selected>Select Account Type</option>
+                            <option>Credit</option>
+                            <option>Savings</option>
+                            <option>Current</option>
+                        </select>
+                        <div *ngIf="accountCreationForm.get('accountType')?.hasError('required') && (accountCreationForm.get('accountType')?.touched || accountCreationForm.get('accountType')?.dirty)"
+                            class="error">
+                            Account Type is required.
+                        </div>
+                    </td>
+                    <td>
+                        <label>Bank Name</label>
+                        <input type="text" placeholder="Enter Bank Name" formControlName="bankName">
+                        <div *ngIf="accountCreationForm.get('bankName')?.hasError('required') && (accountCreationForm.get('bankName')?.touched || accountCreationForm.get('bankName')?.dirty)"
+                            class="error">
+                            Bank Name is required.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>First Name</label>
+                        <input type="text" placeholder="First Name" formControlName="firstName">
+                        <div *ngIf="accountCreationForm.get('firstName')?.hasError('required') && (accountCreationForm.get('firstName')?.touched || accountCreationForm.get('firstName')?.dirty)"
+                            class="error">
+                            First Name is required.
+                        </div>
+                    </td>
+                    <td>
+                        <label>Middle Name</label>
+                        <input type="text" placeholder="Middle Name" formControlName="middleName">
+                        <div *ngIf="accountCreationForm.get('middleName')?.hasError('required') && (accountCreationForm.get('middleName')?.touched || accountCreationForm.get('middleName')?.dirty)"
+                            class="error">
+                            Middle Name is required.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Last Name" formControlName="lastName">
+                        <div *ngIf="accountCreationForm.get('lastName')?.hasError('required') && (accountCreationForm.get('lastName')?.touched || accountCreationForm.get('lastName')?.dirty)"
+                            class="error">
+                            Last Name is required.
+                        </div>
+                    </td>
+                    <td>
+                        <label>Date of Birth</label>
+                        <input type="date" formControlName="dateOfBirth" (change)="calculateAge()">
+                        <div *ngIf="accountCreationForm.get('dateOfBirth')?.hasError('required') && (accountCreationForm.get('dateOfBirth')?.touched || accountCreationForm.get('dateOfBirth')?.dirty)"
+                            class="error">
+                            DoB is required.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Age</label>
+                        <input type="text" placeholder="Enter Age" formControlName="age" [readonly]="true">
+                        <div *ngIf="accountCreationForm.get('age')?.hasError('required') && (accountCreationForm.get('age')?.touched || accountCreationForm.get('age')?.dirty)"
+                            class="error">
+                            Age is required.
+                        </div>
+                    </td>
+
+                    <td>
+                        <label>Phone No</label>
+                        <input type="text" placeholder="Phone No" formControlName="phoneNo">
+                        <div *ngIf="accountCreationForm.get('phoneNo')?.hasError('required') && (accountCreationForm.get('phoneNo')?.touched || accountCreationForm.get('phoneNo')?.dirty)"
+                            class="error">
+                            Phone No is required.
+                        </div>
+                        <div *ngIf="accountCreationForm.get('phoneNo')?.hasError('pattern')" class="error">
+                            Phone No should be 10digit.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Email ID</label>
+                        <input type="email" placeholder="Enter Email" formControlName="email">
+                        <div *ngIf="accountCreationForm.get('email')?.hasError('required') && (accountCreationForm.get('email')?.touched || accountCreationForm.get('email')?.dirty)"
+                            class="error">
+                            Email is required.
+                        </div>
+                        <div *ngIf="accountCreationForm.get('email')?.hasError('email')" class="error">
+                            Email is Invalid.
+                        </div>
+                    </td>
+
+                    <td>
+                        <label>Aadhar Card No</label>
+                        <input type="text" placeholder="Enter Aadhar No" formControlName="aadharCardNo">
+                        <div *ngIf="accountCreationForm.get('aadharCardNo')?.hasError('required') && (accountCreationForm.get('aadharCardNo')?.touched || accountCreationForm.get('aadharCardNo')?.dirty)"
+                            class="error">
+                            Aadhar No is required.
+                        </div>
+                        <div *ngIf="accountCreationForm.get('aadharCardNo')?.hasError('pattern')" class="error">
+                            Aadhar No should be 12digit.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>PIN</label>
+                        <input type="password" placeholder="Enter PIN" formControlName="pin">
+                        <div *ngIf="accountCreationForm.get('pin')?.hasError('required') && (accountCreationForm.get('pin')?.touched || accountCreationForm.get('pin')?.dirty)"
+                            class="error">
+                            PIN is required.
+                        </div>
+                        <div *ngIf="accountCreationForm.get('pin')?.hasError('minlength')" class="error">
+                            PIN should be 4digit.
+                        </div>
+                    </td>
+
+                    <td>
+                        <label>Passport Photograph</label>
+                        <input type="file" formControlName="passportPhotograph">
+                        <div *ngIf="accountCreationForm.get('passportPhotograph')?.hasError('required') && (accountCreationForm.get('passportPhotograph')?.touched || accountCreationForm.get('passportPhotograph')?.dirty)"
+                            class="error">
+                            Photo is required.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Create Account" [disabled]="!accountCreationForm.valid"
+                            [style.background-color]="registerButtonColor">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-----------------------------------FOOTER FOR ACCOUNT CREATION---------------------->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

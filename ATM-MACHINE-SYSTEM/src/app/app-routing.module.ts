@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-import { LoginPageComponent } from './login-page/login-page.component';
+import { AccountCreationPageComponent } from './account-creation-page/account-creation-page.component';
+import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { FooterComponent } from './footer/footer.component';
+import { PinChangeComponent } from './pin-change/pin-change.component';
+import { ChequebookRequestComponent } from './chequebook-request/chequebook-request.component';
 
 const routes: Routes = [
-  {path:'Welcome',component: WelcomePageComponent},
-  {path:'login',component: LoginPageComponent},
-  {path:'UserDashboard',component: UserDashboardComponent},
+  {path: 'welcome' , component: WelcomePageComponent},
+  {path: 'account' , component: AccountCreationPageComponent},
+  {path: 'transaction' , component: TransactionHistoryComponent},
+  {path: 'dashboard' , component: UserDashboardComponent},
+  {path: 'pinchange' , component: PinChangeComponent},
+  {path: 'chequebookrequest' , component: ChequebookRequestComponent},
 
-
+  
 ];
 
 @NgModule({
