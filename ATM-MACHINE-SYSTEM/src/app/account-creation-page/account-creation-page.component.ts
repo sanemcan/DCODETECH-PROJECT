@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-account-creation-page',
@@ -9,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AccountCreationPageComponent implements OnInit {
   accountCreationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -54,6 +56,32 @@ export class AccountCreationPageComponent implements OnInit {
       } else {
         this.accountCreationForm.get('age')!.setValue(age);
       }
+    }
+  }
+
+  onSubmit() {
+    if (this.accountCreationForm.valid) {
+      const accountData = this.accountCreationForm.value;
+
+      // Call the service to send data to Spring backend
+      this.userService.createAccount(accountData).subscribe(
+        (response: any) => {
+          console.log('Full response:', response);
+
+          if (response.success) {
+            console.log('Account created successfully:', response.message);
+            alert("Account request has been sent successfully!");
+            window.location.reload();
+          } else {
+            console.error('Failed to create account. Server response:', response.message);
+            alert("Failed to create account. " + response.message);
+          }
+        },
+        (error) => {
+          console.error('Failed to create account:', error);
+          alert("Failed to create account. Please try again.");
+        }
+      );
     }
   }
 }
