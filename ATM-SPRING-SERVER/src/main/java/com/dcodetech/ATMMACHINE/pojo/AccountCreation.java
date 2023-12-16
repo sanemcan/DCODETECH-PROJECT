@@ -39,8 +39,8 @@ public class AccountCreation {
         return accountType;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setAccountType(String acc) {
+        this.accountType = acc;
     }
 
     public String getBankName() {

@@ -1,0 +1,135 @@
+/*************************Global Styles***********************/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 90px;
+    margin-bottom: 50px;
+}
+
+.box {
+    border: none;
+    border-radius: 10px;
+    background-color: #bbd0ff;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    height: 190px;
+}
+
+p {
+    font-weight: bold;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+}
+
+.accsvg {
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0b0b0b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/************************Header Styles************************/
+header {
+    background-color: #000;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#logo {
+    width: auto;
+    height: 30px;
+}
+
+.right-options {
+    display: flex;
+    gap: 15px;
+}
+
+.right-options a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.right-options a i {
+    margin-right: 10px;
+}
+
+/****************************Footer Styles**************************/
+footer {
+    background-color: #262626;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.footer-social-icons {
+    margin-top: 20px;
+}
+
+.footer-social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+}
+
+
+
+button {
+    transition: transform 0.3s ease;
+
+}
+
+button:hover {
+    background-color: #f28749;
+    transition: 0.2 ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+}
