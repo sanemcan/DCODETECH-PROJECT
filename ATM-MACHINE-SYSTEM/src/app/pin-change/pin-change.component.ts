@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
+
 
 
 @Component({
@@ -9,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PinChangeComponent implements OnInit {
   pinform!: FormGroup;
-  constructor(private fd: FormBuilder) { }
+  constructor(private fd: FormBuilder,private userService: UserService) { }
 
   ngOnInit(): void {
     this.pinChangeForm();
@@ -27,3 +29,4 @@ get changepinbtn():string{return this.pinform.valid ? '#2d6a4f' : '#b7e4c7';}
     })
   }
 }
+

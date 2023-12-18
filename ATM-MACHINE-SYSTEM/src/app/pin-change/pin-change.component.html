@@ -36,7 +36,7 @@
                 <tr>
                     <td>
                         <label>Account Number</label>
-                        <input type="text" placeholder="Enter Account Number" formControlName="accountnumber">
+                        <input type="text" placeholder="Enter Account Number" formControlName="accountnumber" name="account_id">
                         <div *ngIf="pinform.get('accountnumber')?.hasError('required') && (pinform.get('accountnumber')?.touched || pinform.get('accountnumber')?.dirty)"
                             class="error">
                             Account Number is required.
