@@ -1,5 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 table {
@@ -8,7 +11,8 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
@@ -18,7 +22,55 @@ th {
     background-color: #f2f2f2;
 }
 
+h2 {
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
 
+form {
+    margin-top: 40px;
+    justify-content:center;
+    align-items: center;
+    display: flex;
+}
+
+label{
+    margin: 10px;
+}
+
+input {
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+input[placeholder] {
+    margin: 5px;
+    padding: 5px;
+}
+
+.viewtxn {
+    margin: 15px ;
+    border: none;
+    border-radius: 5px;
+    background-color: #52b788;
+    padding: 10px;
+    color: #fff;
+    width: 80px;
+}
+
+.viewtxn:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: 0.2s ease-in-out;
+}
+
+.error{
+    color: red;
+    font-size: 15px;
+}
 /************************Header Styles************************/
 header {
     background-color: #52b788;
