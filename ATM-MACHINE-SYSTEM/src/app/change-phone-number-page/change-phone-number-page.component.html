@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Transfer Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-----------------------------------HEADER FOR Money Transfer----------------------------------------------------------------------->
+    <header>
+        <div class="logo">
+            <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
+        </div>
+        <div class="right-options">
+            <a href="#" title="Sign Up">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" title="Login">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </a>
+        </div>
+    </header>
+
+
+    <!-------------------------ACCOUNT CREATION FORM----------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <form [formGroup]="changePhoneNumberForm">
+            <table>
+                <tr>
+                    <th colspan="2">CHANGE PHONE NUMBER FORM</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Account Number</label>
+                        <input type="number" placeholder="Enter Your Account NUmber" formControlName="accountnumber">
+                        <div *ngIf="changePhoneNumberForm.get('accountnumber')?.hasError('required') && (changePhoneNumberForm.get('accountnumber')?.touched || changePhoneNumberForm.get('accountnumber')?.dirty)"
+                            class="error">
+                            Account Number is required.
+                        </div>
+                        <div *ngIf="changePhoneNumberForm.get('accountnumber')?.hasError('pattern')" class="error">
+                            Account Number should be contain 12 digit.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Previous Phone Number</label>
+                        <input type="number" placeholder="Phone No" formControlName="previousphoneNo">
+                        <div *ngIf="changePhoneNumberForm.get('previousphoneNo')?.hasError('required') && (changePhoneNumberForm.get('previousphoneNo')?.touched || changePhoneNumberForm.get('previousphoneNo')?.dirty)"
+                            class="error">
+                            Phone No is required.
+                        </div>
+                        <div *ngIf="changePhoneNumberForm.get('previousphoneNo')?.hasError('pattern')" class="error">
+                            Phone No should be 10digit.
+                        </div>
+                    </td>
+                </tr>
+
+                    
+                <tr>
+                    <td>
+                        <label> Phone Number</label>
+                        <input type="number" placeholder="Phone No" formControlName="phoneNo">
+                        <div *ngIf="changePhoneNumberForm.get('phoneNo')?.hasError('required') && (changePhoneNumberForm.get('phoneNo')?.touched || changePhoneNumberForm.get('phoneNo')?.dirty)"
+                            class="error">
+                            Phone No is required.
+                        </div>
+                        <div *ngIf="changePhoneNumberForm.get('phoneNo')?.hasError('pattern')" class="error">
+                            Phone No should be 10digit.
+                        </div>
+                    </td>
+                </tr>
+
+                    
+                <tr>
+                    <td>
+                        <label>PIN</label>
+                        <input type="password" placeholder="Enter PIN" formControlName="pin">
+                        <div *ngIf="changePhoneNumberForm.get('pin')?.hasError('required') && (changePhoneNumberForm.get('pin')?.touched || changePhoneNumberForm.get('pin')?.dirty)"
+                            class="error">
+                            PIN is required.
+                        </div>
+                        <div *ngIf="changePhoneNumberForm.get('pin')?.hasError('minlength')" class="error">
+                            PIN should be 4digit.
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Transfer " [disabled]="!changePhoneNumberForm.valid"
+                            [style.background-color]="registerButtonColor">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-----------------------------------FOOTER FOR ACCOUNT CREATION---------------------->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+

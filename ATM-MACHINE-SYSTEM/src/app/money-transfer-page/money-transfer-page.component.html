@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Transfer Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-----------------------------------HEADER FOR Money Transfer----------------------------------------------------------------------->
+    <header>
+        <div class="logo">
+            <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
+        </div>
+        <div class="right-options">
+            <a href="#" title="Sign Up">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" title="Login">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </a>
+        </div>
+    </header>
+
+
+    <!-------------------------ACCOUNT CREATION FORM----------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <form [formGroup]="MoneyTransferForm">
+            <table>
+                <tr>
+                    <th colspan="2">MONEY TRANSFER FORM</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Account Number</label>
+                        <input type="number" placeholder="Enter Your Account NUmber" formControlName="accountnumber">
+                        <div *ngIf="MoneyTransferForm.get('accountnumber')?.hasError('required') && (MoneyTransferForm.get('accountnumber')?.touched || MoneyTransferForm.get('accountnumber')?.dirty)"
+                            class="error">
+                            Account Number is required.
+                        </div>
+                        <div *ngIf="MoneyTransferForm.get('accountnumber')?.hasError('pattern')" class="error">
+                            Account Number should be contain 12 digit.
+                        </div>
+                    </td>
+                </tr>
+                <tr>       
+                    <td>
+                        <label>Recipient Account Number</label>
+                        <input type="number" placeholder="Enter Recipient Account number to whom you transfer money" formControlName="recipientaccountnumber">
+                        <div *ngIf="MoneyTransferForm.get('recipientaccountnumber')?.hasError('required') && (MoneyTransferForm.get('recipientaccountnumber')?.touched ||MoneyTransferForm.get('recipientaccountnumber')?.dirty)"
+                            class="error">
+                            Recipient Account number is required.
+                        </div>
+                        <div *ngIf="MoneyTransferForm.get('recipientaccountnumber')?.hasError('pattern')" class="error">
+                            Account Number should be contain 12 digit.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>       
+                    <td>
+                        <label>Transaction Ammount</label>
+                        <input type="number" placeholder="Enter Trannsaction Ammount" formControlName="transactionammount">
+                        <div *ngIf="MoneyTransferForm.get('transactionammount')?.hasError('required') && (MoneyTransferForm.get('transactionammount')?.touched ||MoneyTransferForm.get('transactionammount')?.dirty)"
+                            class="error">
+                            Trannsaction Ammount is required.
+                        </div>
+                        <div *ngIf="MoneyTransferForm.get('transactionammount')?.hasError('pattern')" class="error">
+                            transaction ammount should be contain ammount upto limit 600000"
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                <td>
+                    <label>Date</label>
+                    <input type="date" formControlName="date" >
+                    <div *ngIf="MoneyTransferForm.get('date')?.hasError('required') && (MoneyTransferForm.get('date')?.touched || MoneyTransferForm.get('date')?.dirty)"
+                        class="error">
+                        Date  is required.
+                    </div>
+                </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>PIN</label>
+                        <input type="password" placeholder="Enter PIN" formControlName="pin">
+                        <div *ngIf="MoneyTransferForm.get('pin')?.hasError('required') && (MoneyTransferForm.get('pin')?.touched || MoneyTransferForm.get('pin')?.dirty)"
+                            class="error">
+                            PIN is required.
+                        </div>
+                        <div *ngIf="MoneyTransferForm.get('pin')?.hasError('minlength')" class="error">
+                            PIN should be 4digit.
+                        </div>
+                    </td>
+                </tr>
+
+              
+                <tr>
+                    
+
+                    <td>
+                        <label>Phone No</label>
+                        <input type="text" placeholder="Phone No" formControlName="phoneNo">
+                        <div *ngIf="MoneyTransferForm.get('phoneNo')?.hasError('required') && (MoneyTransferForm.get('phoneNo')?.touched || MoneyTransferForm.get('phoneNo')?.dirty)"
+                            class="error">
+                            Phone No is required.
+                        </div>
+                        <div *ngIf="MoneyTransferForm.get('phoneNo')?.hasError('pattern')" class="error">
+                            Phone No should be 10digit.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Transfer " [disabled]="!MoneyTransferForm.valid"
+                            [style.background-color]="registerButtonColor">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-----------------------------------FOOTER FOR ACCOUNT CREATION---------------------->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
