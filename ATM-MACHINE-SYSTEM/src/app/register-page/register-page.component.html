@@ -11,51 +11,94 @@
     <title>Register Page</title>
   </head>
   <body>
+
+    <!-----------------------------------HEADER FOR ACCOUNT CREATION---------------------->
+    <header>
+        <div class="logo">
+            <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
+        </div>
+        <div class="right-options">
+            <!-- <a href="#" title="Sign Up">
+                <i class="fas fa-home"></i> Home
+            </a> -->
+            <a href="#" title="Sign In">
+                <i class="fas fa-login"></i> Login
+            </a>
+            <a href="#" title="Login">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </a>
+        </div>
+    </header>
+
     
-     <div class="container-fluid">
-        <form class="mx-auto" [formGroup]="registerform"> <!-- Change 'registerform' to 'registerForm' -->
+     <div class="container">
+        <form  [formGroup]="registerform"> <!-- Change 'registerform' to 'registerForm' -->
+           
+     <table>
+        <tr>
+            <th>REGISTER</th>
+        </tr>  
 
-
-            <h4 class="text-center">Register</h4>
-
-            <div class="mb-3  mt-5">
-                <label for="firstname" class="form-label">First Name</label>
-                <input type="text"    class="form-control"  id="input_username"  aria-describedby="usernamehelp" formControlName="firstname">
+        <tr>
+            <td>
+            <div>
+                <label>First Name</label>
+                <input type="text" placeholder="enter first name" formControlName="firstname">
                 <div *ngIf="registerform.get('firstname')?.hasError('required') && (registerform.get('firstname')?.touched || registerform.get('firstname')?.dirty)"
                             class="error">
                             first name is required
                         </div>
             </div>
-            
-            <div  class="mb-3">
-                <label for="lastname" class="form-label">Last Name</label>
-                <input type="text"  class="form-control" id="input lastname" formControlName="lastname">
+            </td>
+        </tr>  
+        
+        
+        <tr>   
+            <td> 
+            <div>
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter last Name" formControlName="lastname">
                 <div *ngIf="registerform.get('lastname')?.hasError('required') && (registerform.get('lastname')?.touched || registerform.get('lastname')?.dirty)"
                             class="error">
                         Last name is required
                         </div>
             </div>
+            </td>
+        </tr>    
 
-            <div  class="mb-3">
-                <label for="Email" class="form-label">Email id</label>
-                <input type="Email"  class="form-control" id="input username" formControlName="email">
+
+        <tr>
+            <td>
+            <div>
+                <label>Email id</label>
+                <input type="Email"  placeholder="Enter Email id" formControlName="email">
                 <div *ngIf="registerform.get('email')?.hasError('required') && (registerform.get('email')?.touched || registerform.get('email')?.dirty)"
                             class="error">
                             Email id is required
                         </div>
             </div>
+            </td>
+         </tr>   
 
-            <div  class="mb-3">
-                <label for="username" class="form-label">User Name</label>
-                <input type="text"  class="form-control" id="input username" formControlName="username">
+
+         <tr>
+            <td>
+            <div >
+                <label>User Name</label>
+                <input type="text"  placeholder="Enter User Name" formControlName="username">
                 <div *ngIf="registerform.get('username')?.hasError('required') && (registerform.get('username')?.touched || registerform.get('username')?.dirty)"
                             class="error">
                             username is required
                         </div>
             </div>
+            </td>
+          </tr>  
 
-            <div  class="mb-3">
-                <label for="passsword" class="form-label">Password</label>
+
+          <tr>
+            <td>
+            <div>
+                <label>Password</label>
                 <input type="password"  class="form-control" id="input password" formControlName="password">
                 <div *ngIf="registerform.get('password')?.hasError('required') && (registerform.get('password')?.touched || registerform.get('password')?.dirty)"
                             class="error">
@@ -63,10 +106,41 @@
                         </div>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-4">Register</button>
+            </td>
+         </tr>   
 
+         <tr>   
+            <td> 
+  
+            <input type="submit" value="Register" >
+             
+  
+            
+        </td>
+      </tr>
+        </table> 
         </form>
      </div>
+
+      <!-----------------------------------FOOTER FOR ACCOUNT CREATION---------------------->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+    </footer>
+
+
+
+
      <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    

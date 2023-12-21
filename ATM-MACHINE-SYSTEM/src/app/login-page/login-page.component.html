@@ -11,30 +11,92 @@
     <title>Login Page</title>
   </head>
   <body>
+
+    <!-----------------------------------HEADER FOR ACCOUNT CREATION---------------------->
+    <header>
+      <div class="logo">
+          <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
+      </div>
+      <div class="right-options">
+          <!-- <a href="#" title="Sign Up">
+              <i class="fas fa-home"></i> Home
+          </a> -->
+          <a href="#" title="Sign Up">
+            <i class="fas fa-register"></i> Register
+        </a>
+          <a href="#" title="Login">
+              <i class="fas fa-sign-out-alt"></i> Sign Out
+          </a>
+      </div>
+  </header>
     
-     <div class="container-fluid">
-        <form  class="mx-auto">
+     <div class="container">
+        <form  [formGroup]="loginForm">
 
+          <table>
+          
+            <tr>
+              <th>LOGIN</th>
+          </tr>  
+          
+           
+         <tr>
+            <td>
+              <label>User Name</label>
+              <input type="text" placeholder="Enter User Name" formControlName="username">
+              <div *ngIf="loginForm.get('username')?.hasError('required') && (loginForm.get('username')?.touched || loginForm.get('username')?.dirty)"
+                            class="error">
+                            User Name is required.
+                        </div>
+             </td>
+         </tr>
+           
+          <tr>
+          <td>
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" formControlName="password">
+            <div *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.touched || loginForm.get('username')?.dirty)"
+                            class="error">
+                            Password is required.
+                        </div>
 
-            <h4 class="text-center">Login</h4>
-
-            <div class="mb-3  mt-5">
-                <label for="username" class="form-label">Username</label>
-                <input type="text"    class="form-control"  id="input_username"  aria-describedby="usernamehelp">
-            </div>
+                           
+            <div id="usernamehelp" class="form-text mt-3">
+              <a href="">Forget password?</a></div>
+          </td>
+       </tr>
             
-            <div  class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password"  class="form-control" id="input password">
-                <div id="usernamehelp" class="form-text mt-3">Forget password</div>
-            </div>
+        <tr>   
+          <td> 
 
-            <button type="submit" class="btn btn-primary mt-4">Login</button>
+          <input type="submit" value="Login" >
+           
 
+          
+      </td>
+    </tr>
+        </table>
         </form>
      </div>
      <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    
+
+
+    <!-----------------------------------FOOTER FOR ACCOUNT CREATION---------------------->
+    <footer>
+      <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-social-icons">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+  </footer>
   </body>
 </html>
