@@ -27,7 +27,7 @@
 
     <!-------------------------ACCOUNT CREATION FORM----------------------------------------------------------------------------------------------------->
     <div class="container">
-        <form [formGroup]="MoneyTransferForm">
+        <form [formGroup]="MoneyTransferForm" (ngSubmit)="onSubmit()">
             <table>
                 <tr>
                     <th colspan="2">MONEY TRANSFER FORM</th>
@@ -40,9 +40,7 @@
                             class="error">
                             Account Number is required.
                         </div>
-                        <div *ngIf="MoneyTransferForm.get('accountnumber')?.hasError('pattern')" class="error">
-                            Account Number should be contain 12 digit.
-                        </div>
+                        
                     </td>
                 </tr>
                 <tr>       
@@ -53,9 +51,7 @@
                             class="error">
                             Recipient Account number is required.
                         </div>
-                        <div *ngIf="MoneyTransferForm.get('recipientaccountnumber')?.hasError('pattern')" class="error">
-                            Account Number should be contain 12 digit.
-                        </div>
+                       
                     </td>
                 </tr>
 
@@ -67,9 +63,7 @@
                             class="error">
                             Trannsaction Ammount is required.
                         </div>
-                        <div *ngIf="MoneyTransferForm.get('transactionammount')?.hasError('pattern')" class="error">
-                            transaction ammount should be contain ammount upto limit 600000"
-                        </div>
+                        
                     </td>
                 </tr>
 

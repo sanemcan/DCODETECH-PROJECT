@@ -14,4 +14,8 @@ export class UserService {
   createAccount(accountData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/createAccount`, accountData);  
 }
+
+   moneytransfer(transferdata: any): Observable<any>{
+      return this.http.post(`${this.apiUrl}/money-transfer`, transferdata); //ikde component cha path ahe post mapping
+   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class MoneyTransferFormComponent implements OnInit {
 
  
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private userService: UserService) { }//yat quama deun private userService: UserService hi file user.service.ts import keli 
 
   ngOnInit(): void {
     this.initializeForm();
@@ -24,9 +25,9 @@ export class MoneyTransferFormComponent implements OnInit {
 
   initializeForm(): void {
     this.MoneyTransferForm = this.fb.group({
-      accountnumber: ['', [Validators.required, Validators.pattern(/^\d{12}$/)]],
-      recipientaccountnumber:['', [Validators.required, Validators.pattern(/^\d{12}$/)]],
-      transactionammount:['', [Validators.required, Validators.pattern(/^\d{60000}$/)]],
+      accountnumber: ['', [Validators.required, Validators.pattern(/^\d{1}$/)]],
+      recipientaccountnumber:['', [Validators.required, Validators.pattern(/^\d{1}$/)]],
+      transactionammount:['', [Validators.required]],
       date: ['', Validators.required],
       pin: ['', [Validators.required, Validators.minLength(4)]],
       phoneNo: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
@@ -34,27 +35,76 @@ export class MoneyTransferFormComponent implements OnInit {
       
     });
   }
+    
+
+  //ikde form submit sathi method karftoy money transfer jevha pn form submit hoil tevha hi method call hoil    
+  
+  
+  onSubmit(){
+      if(this. MoneyTransferForm.valid){
+            
+        const moneytransfervariable= this.MoneyTransferForm.value; // userService.ts madhe ek observable use kelya tyachasathi apn .subscribe use karto
+        this.userService.moneytransfer(moneytransfervariable).subscribe(
+        
+    
+          (response:any)=>  {
+                   if (response.success){
+                    console.log("Money transfer successfully",response.message);
+                    alert(
+                      "Money transfer successfully"
+                    );
+                    window.location.reload();
+                   } else{
+                     
+                     console.log("failed to transfer",response.message);
+                     alert(
+                      "failed to transfer amount"
+                     )
+
+                   }
+
+          }
+
+
+
+        )  
+       
+      }
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-  //   // EVENT LISTNER TO CALCULATE AGE FROM DOB
-  //   this.MoneyTransferForm.get('date')!.valueChanges.subscribe(() => {
-  //     this.calculateAge();
-  //   });
-  // }
-
-  // calculateAge(): void {
-  //   const birthDate = this.accountCreationForm.get('dateOfBirth')!.value;
-  //   if (birthDate) {
-  //     const today = new Date(); //current date deto with year and month
-  //     const dob = new Date(birthDate);
-  //     const age = today.getFullYear() - dob.getFullYear();  //current year aani birth year minus kela
-
-  //     // Check if the birthday has occurred this year
-  //     if (today.getMonth() < dob.getMonth() || (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) {
-  //       this.accountCreationForm.get('age')!.setValue(age - 1);
-  //     } else {
-  //       this.accountCreationForm.get('age')!.setValue(age);
-  //     }
-  //   }
-  // }
-
+  
