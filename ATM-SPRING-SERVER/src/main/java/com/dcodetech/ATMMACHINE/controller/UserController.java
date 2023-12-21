@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @Autowired
+    @Autowired //DEPENDENCY INJECTION
     private Userdao userdao;
 
     @PostMapping("/api/createAccount")

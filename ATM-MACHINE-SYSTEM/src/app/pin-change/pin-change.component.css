@@ -1,3 +1,7 @@
+ 
+ 
+ 
+ 
  /*************************Global Styles***********************/
  body {
      margin: 0;
@@ -171,3 +175,47 @@
      margin: 0 15px;
      font-size: 20px;
  }
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    th, td {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    input, select, textarea {
+        width: 100%; /* Full width for smaller screens */
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    /* Adjustments for header and footer */
+    header {
+        padding: 10px;
+    }
+
+    .footer-links a, .footer-social-icons a {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Additional adjustments for screens with max width of 400px */
+@media only screen and (max-width: 400px) {
+    th, td {
+        font-size: 12px; /* Further adjusted font size for smaller screens */
+    }
+
+    input, select, textarea {
+        font-size: 12px; /* Further adjusted font size for smaller screens */
+    }
+}
+
+

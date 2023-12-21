@@ -7,7 +7,7 @@ public class AccountCreation {
     private String firstName;
     private String middleName;
     private String lastName;
-    private String dateOfBirth;
+    private String dateOfBirth;  
     private int age;
     private String phoneNo;
     private String email;
