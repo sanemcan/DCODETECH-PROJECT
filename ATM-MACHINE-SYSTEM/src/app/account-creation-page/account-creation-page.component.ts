@@ -58,7 +58,6 @@ export class AccountCreationPageComponent implements OnInit {
       }
     }
   }
-
   onSubmit() {
     if (this.accountCreationForm.valid) {
       const accountData = this.accountCreationForm.value;

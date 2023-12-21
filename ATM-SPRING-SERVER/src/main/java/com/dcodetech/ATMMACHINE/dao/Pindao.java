@@ -36,7 +36,7 @@ public class Pindao {
             try {
                 if (preparedStatement != null)
                     preparedStatement.close();
-                DBUtils.closeConnection();
+                DBUtils.closeconnection();
             } catch (SQLException e) {
                 e.printStackTrace();
 
@@ -60,7 +60,7 @@ public class Pindao {
             ResultSet rs = preparedStatement.executeQuery();
             boolean accountAndPinMatch = rs.next();
             rs.close();
-            DBUtils.closeConnection();
+            DBUtils.closeconnection();
 
             return accountAndPinMatch;
 

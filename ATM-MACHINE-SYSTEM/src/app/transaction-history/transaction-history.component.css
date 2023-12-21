@@ -55,7 +55,8 @@ input[placeholder] {
     margin: 15px ;
     border: none;
     border-radius: 5px;
-    background-color: #52b788;
+    /* background-color: #52b788; */
+    background:linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%); 
     padding: 10px;
     color: #fff;
     width: 80px;

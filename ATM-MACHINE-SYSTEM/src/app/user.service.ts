@@ -12,13 +12,15 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  updatePin(pinChange: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/pinupdate`, pinChange, { responseType: 'text' });
+  }
   createAccount(accountData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/createAccount`, accountData);
   }
 
-  updatePin(pinChange: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/pinupdate`, pinChange, { responseType: 'text' });
-}
-
-
+  moneytransfer(transferdata: any): Observable<any> {
+    console.log('Transfer Data:', transferdata);
+    return this.http.post(`${this.apiUrl}/money-transfer`, transferdata); //ikde component cha path ahe post mapping
+  }
 }

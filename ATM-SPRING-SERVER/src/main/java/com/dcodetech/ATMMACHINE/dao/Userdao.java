@@ -47,7 +47,7 @@ public class Userdao {
             try {
                 if (preparedStatement != null)
                     preparedStatement.close();
-                DBUtils.closeConnection();
+                DBUtils.closeconnection();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -74,7 +74,7 @@ public class Userdao {
             try {
                 if (preparedStatement != null)
                     preparedStatement.close();
-                DBUtils.closeConnection();
+                DBUtils.closeconnection();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

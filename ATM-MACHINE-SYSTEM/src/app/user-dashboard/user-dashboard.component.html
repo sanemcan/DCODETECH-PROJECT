@@ -30,34 +30,34 @@
     <!-------------------------CHANGE PIN FORM-------------------------------------->
     <h2><span style="color: #bbd0ff;">USER</span> DASHBOARD</h2>
     <div class="container">
-        <div class="box">
+        <div class="box" (click)="navigateToAccountCreation()">
             <img src="../../assets/acccreation.svg" class="accsvg">
             <p>ACCOUNT CREATION</p>
         </div>
 
-        <div class="box">
+        <div class="box" (click)="navigateToTransactionHistory()">
             <img src="../../assets/txnhistory.svg" class="accsvg">
             <p>TRANSACTION HISTORY</p>
         </div>
 
-        <div class="box">
+        <div class="box" (click)="navigateToPhoneNoChange()">
             <img src="../../assets/phnno.svg" class="accsvg">
             <p>PHONE NO CHANGE</p>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" (click)="navigateToMoneyTransfer()">
         <div class="box">
             <img src="../../assets/moneytransfer.svg" class="accsvg">
             <p>MONEY TRANSFER</p>
         </div>
 
-        <div class="box">
+        <div class="box" (click)="navigateToPinChange()">
             <img src="../../assets/pinchange.svg" class="accsvg">
             <p>PIN CHANGE</p>
         </div>
 
-        <div class="box">
+        <div class="box" (click)="navigateToChequeBookReq()">
             <img src="../../assets/cheque.svg" class="accsvg">
             <p>CHEQUE BOOK REQUEST</p>
         </div>

@@ -1,7 +1,6 @@
 package com.dcodetech.ATMMACHINE.pojo;
 
 public class AccountCreation {
-
     private String accountType;
     private String bankName;
     private String firstName;
