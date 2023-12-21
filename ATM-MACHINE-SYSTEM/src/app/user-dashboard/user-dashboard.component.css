@@ -57,7 +57,8 @@ h2 {
 
 /************************Header Styles************************/
 header {
-    background-color: #000;
+    /* background-color: #000; */
+    background: linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%);
     padding: 15px;
     color: #fff;
     display: flex;
@@ -91,7 +92,8 @@ header {
 
 /****************************Footer Styles**************************/
 footer {
-    background-color: #262626;
+    /* background-color: #262626; */
+    background: linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%);
     color: #fff;
     padding: 20px 0;
     width: 100%;

@@ -73,7 +73,8 @@ input[placeholder] {
 }
 /************************Header Styles************************/
 header {
-    background-color: #52b788;
+    /* background-color: #52b788; */
+    background: linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%);
     padding: 15px;
     color: #fff;
     display: flex;
@@ -107,7 +108,8 @@ header {
 
 /****************************Footer Styles**************************/
 footer {
-    background-color: #40916c;
+    /* background-color: #40916c; */
+    background: linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%);
     color: #fff;
     padding: 20px 0;
     width: 102%;

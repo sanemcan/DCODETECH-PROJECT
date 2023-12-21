@@ -22,4 +22,9 @@ public class DBUtils {
         if (cn != null)
             cn.close();
     }
+
+    public static void connectwhenpageopen() throws SQLException{
+
+    }
+
 }
