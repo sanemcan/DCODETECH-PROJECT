@@ -24,7 +24,7 @@ public class ChequereqController {
      @Autowired
     private Chequereqdao chequereqdao;
 
-    @PostMapping("/api/chequebookReq")
+    @PostMapping("/chequebookReq")
     public ResponseEntity<Map<String, Object>> requestChequebook(@RequestBody ChequebookReq chequebookReq) {
           boolean success =chequereqdao.ChequebookReqDeatils(chequebookReq); 
           Map<String, Object> response =new HashMap<>();
@@ -36,7 +36,7 @@ public class ChequereqController {
 
           } else {
             response.put("success", false);
-            response.put("message", "Request  Failed Send ");
+            response.put("message", "Request  Failed to  Send ");
           }
          return new ResponseEntity<>(response, HttpStatus.OK);
     }

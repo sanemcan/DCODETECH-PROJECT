@@ -7,6 +7,7 @@
 }
 
 body{
+    
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -21,6 +22,8 @@ form{
     width: 24% !important;
     background-color: white !important;
     padding: 50px;
+    height: 40%;
+
 }
 
 .btn-primary{
@@ -50,4 +53,8 @@ form{
     form {
         width: 100% !important;
     }
+  }
+
+  .error{
+    color: red;
   }

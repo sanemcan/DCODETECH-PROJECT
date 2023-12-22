@@ -1,65 +1,70 @@
-
 /*************************Global Styles***********************/
 body {
-margin: 0;
-padding: 0;
-background: hsla(50, 79%, 76%, 1);
-
-background: radial-gradient(circle, hsla(50, 79%, 76%, 1) 0%, hsla(39, 87%, 62%, 1) 100%);
-
-background: -moz-radial-gradient(circle, hsla(50, 79%, 76%, 1) 0%, hsla(39, 87%, 62%, 1) 100%);
-
-background: -webkit-radial-gradient(circle, hsla(50, 79%, 76%, 1) 0%, hsla(39, 87%, 62%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F2E291", endColorstr="#F2B84B", GradientType=1 );
-
-
-
-
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-display:flex;
-align-items: center;
-justify-content: center;
-height: 100vh; 
-margin-left: 17%;
-
-} 
-
- button
- {
-
-width:25%;
-height: 35vh;
-font-size: 18px;
-border-radius: 5px;
-margin-top: 40px; 
-margin-right: 30px;
-margin-bottom: 10px;  
- box-sizing: border-box;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 90px;
+    margin-bottom: 50px;
 }
 
-h1{
-   text-decoration: underline;
-   text-underline-offset: 8px;
+.box {
+    border: none;
+    border-radius: 10px;
+    background-color: #bbd0ff;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: 20px;
     text-align: center;
+    width: 220px;
+    height: 190px;
 }
 
+p {
+    font-weight: bold;
+}
 
+.box:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
 
+.box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+}
+
+.accsvg {
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0b0b0b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 /************************Header Styles************************/
 header {
-    /* background-color: #52b788; */
-    background-color: #262626;
+    /* background-color: #000; */
+    background: linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%);
     padding: 15px;
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 98%;
+    width: 100%;
 }
 
 #logo {
@@ -87,7 +92,8 @@ header {
 
 /****************************Footer Styles**************************/
 footer {
-    background-color: #262626;
+    /* background-color: #262626; */
+    background: linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%);
     color: #fff;
     padding: 20px 0;
     width: 100%;
@@ -119,20 +125,13 @@ footer {
 
 
 button {
-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 
 }
 
 button:hover {
-background-color: #f28749;
-transition: 0.2 ease-in-out;
-transform: scale(1.1);
-cursor: pointer;
+    background-color: #f28749;
+    transition: 0.2 ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
 }
-
-
-
-
-
-
-

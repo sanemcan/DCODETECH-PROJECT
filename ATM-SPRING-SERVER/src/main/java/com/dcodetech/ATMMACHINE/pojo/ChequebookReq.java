@@ -3,81 +3,80 @@ package com.dcodetech.ATMMACHINE.pojo;
 public class ChequebookReq {
 
 
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String phoneNo;
-    private String email;
+    private String firstname;
+    private String middlename;
+    private String lastname;
+    private String phoneno;
+    private String emailid;
     private String date;
-    private String accountType;
-    private String bankName;
-    private String accountNumber;
+    private String accounttype;
+    private String bankname;
+    private String accountnumber;
     private String pin;
-    private String startingChequeno;
-    private String endingChequeno;
+    private String startingcheque;
+    private String endingcheque;
     private String leaves;
 
     public ChequebookReq(){
 
     }
 
-    public ChequebookReq(String firstName, String middleName,String lastName, String phoneNo, String email,String date,
-    String accountType,String bankName,String accountNumber, String pin, String startingChequeno,String  endingChequeno, String leaves )
-    {
-        this.firstName=firstName;
-        this.middleName=middleName;
-        this.lastName=lastName;
-        this.phoneNo=phoneNo;
-        this.email=email;
-        this.date=date;
-        this.accountType=accountType;
-        this.bankName=bankName;
-        this.accountNumber=accountNumber;
-        this.pin=pin;
-        this.startingChequeno=startingChequeno;
-        this.endingChequeno=endingChequeno;
-        this.leaves=leaves;
-
+    public ChequebookReq(String firstname, String middlename, String lastname, String phoneno, String emailid,
+            String date, String accounttype, String bankname, String accountnumber, String pin, String startingcheque,
+            String endingcheque, String leaves) {
+        this.firstname = firstname;
+        this.middlename = middlename;
+        this.lastname = lastname;
+        this.phoneno = phoneno;
+        this.emailid = emailid;
+        this.date = date;
+        this.accounttype = accounttype;
+        this.bankname = bankname;
+        this.accountnumber = accountnumber;
+        this.pin = pin;
+        this.startingcheque = startingcheque;
+        this.endingcheque = endingcheque;
+        this.leaves = leaves;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getMiddlename() {
+        return middlename;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public void setMiddlename(String middlename) {
+        this.middlename = middlename;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
+    public String getPhoneno() {
+        return phoneno;
     }
 
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+    public void setPhoneno(String phoneno) {
+        this.phoneno = phoneno;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailid() {
+        return emailid;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailid(String emailid) {
+        this.emailid = emailid;
     }
 
     public String getDate() {
@@ -88,28 +87,28 @@ public class ChequebookReq {
         this.date = date;
     }
 
-    public String getAccountType() {
-        return accountType;
+    public String getAccounttype() {
+        return accounttype;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setAccounttype(String accounttype) {
+        this.accounttype = accounttype;
     }
 
-    public String getBankName() {
-        return bankName;
+    public String getBankname() {
+        return bankname;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setBankname(String bankname) {
+        this.bankname = bankname;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getAccountnumber() {
+        return accountnumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setAccountnumber(String accountnumber) {
+        this.accountnumber = accountnumber;
     }
 
     public String getPin() {
@@ -120,20 +119,20 @@ public class ChequebookReq {
         this.pin = pin;
     }
 
-    public String getStartingChequeno() {
-        return startingChequeno;
+    public String getStartingcheque() {
+        return startingcheque;
     }
 
-    public void setStartingChequeno(String startingChequeno) {
-        this.startingChequeno = startingChequeno;
+    public void setStartingcheque(String startingcheque) {
+        this.startingcheque = startingcheque;
     }
 
-    public String getEndingChequeno() {
-        return endingChequeno;
+    public String getEndingcheque() {
+        return endingcheque;
     }
 
-    public void setEndingChequeno(String endingChequeno) {
-        this.endingChequeno = endingChequeno;
+    public void setEndingcheque(String endingcheque) {
+        this.endingcheque = endingcheque;
     }
 
     public String getLeaves() {
@@ -146,12 +145,13 @@ public class ChequebookReq {
 
     @Override
     public String toString() {
-        return "ChequebookReq [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName
-                + ", phoneNo=" + phoneNo + ", email=" + email + ", date=" + date + ", accountType=" + accountType
-                + ", bankName=" + bankName + ", accountNumber=" + accountNumber + ", pin=" + pin + ", startingChequeno="
-                + startingChequeno + ", endingChequeno=" + endingChequeno + ", leaves=" + leaves + "]";
+        return "ChequebookReq [firstname=" + firstname + ", middlename=" + middlename + ", lastname=" + lastname
+                + ", phoneno=" + phoneno + ", emailid=" + emailid + ", date=" + date + ", accounttype=" + accounttype
+                + ", bankname=" + bankname + ", accountnumber=" + accountnumber + ", pin=" + pin + ", startingcheque="
+                + startingcheque + ", endingcheque=" + endingcheque + ", leaves=" + leaves + "]";
     }
 
+  
 
 
     

@@ -32,7 +32,7 @@
 
     <!------------------------ CHEQUE BOOK REQUEST FORM-------------------------------------->
     <div class="container">
-        <form [formGroup]="chequeReqform">
+        <form [formGroup]="chequeReqform" (ngSubmit)="onSubmit()">
             <table>
                 <tr>
                     <th colspan="2">CHEQUE BOOK REQUEST FORM</th>

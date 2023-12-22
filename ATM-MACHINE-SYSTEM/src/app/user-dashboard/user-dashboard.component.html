@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pin Change Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -26,20 +28,40 @@
 
 
     <!-------------------------CHANGE PIN FORM-------------------------------------->
-   
-    <h1>User Dashboard</h1>
+    <h2><span style="color: #bbd0ff;">USER</span> DASHBOARD</h2>
     <div class="container">
-  
-        <div>
-            <button><img src="../../assets/circle-user-round.svg"> Creation </button>
-            <button>Transaction History</button>
-            <button>Phone Number Change</button>
-            <button>Money Transfer</button>
-            <button>Pin Change</button>
-            <button>Cheque Book Request</button>
+        <div class="box" (click)="navigateToAccountCreation()">
+            <img src="../../assets/acccreation.svg" class="accsvg">
+            <p>ACCOUNT CREATION</p>
+        </div>
+
+        <div class="box" (click)="navigateToTransactionHistory()">
+            <img src="../../assets/txnhistory.svg" class="accsvg">
+            <p>TRANSACTION HISTORY</p>
+        </div>
+
+        <div class="box" (click)="navigateToPhoneNoChange()">
+            <img src="../../assets/phnno.svg" class="accsvg">
+            <p>PHONE NO CHANGE</p>
         </div>
     </div>
 
+    <div class="container" (click)="navigateToMoneyTransfer()">
+        <div class="box">
+            <img src="../../assets/moneytransfer.svg" class="accsvg">
+            <p>MONEY TRANSFER</p>
+        </div>
+
+        <div class="box" (click)="navigateToPinChange()">
+            <img src="../../assets/pinchange.svg" class="accsvg">
+            <p>PIN CHANGE</p>
+        </div>
+
+        <div class="box" (click)="navigateToChequeBookReq()">
+            <img src="../../assets/cheque.svg" class="accsvg">
+            <p>CHEQUE BOOK REQUEST</p>
+        </div>
+    </div>
     <!-----------------------------------FOOTER ---------------------->
     <footer>
         <div class="footer-links">

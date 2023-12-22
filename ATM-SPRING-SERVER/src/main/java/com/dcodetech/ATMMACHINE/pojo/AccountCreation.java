@@ -1,7 +1,6 @@
 package com.dcodetech.ATMMACHINE.pojo;
 
 public class AccountCreation {
-
     private String accountType;
     private String bankName;
     private String firstName;
@@ -39,8 +38,8 @@ public class AccountCreation {
         return accountType;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setAccountType(String acc) {
+        this.accountType = acc;
     }
 
     public String getBankName() {

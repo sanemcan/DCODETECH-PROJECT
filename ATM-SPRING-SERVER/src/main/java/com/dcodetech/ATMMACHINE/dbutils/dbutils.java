@@ -13,8 +13,8 @@ public class DBUtils {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        String url = "jdbc:mysql://localhost/atm_machine";
-        cn = DriverManager.getConnection(url, "root", "Sagar@2001");
+        String url = "jdbc:mysql://127.0.0.1:3306/atm_machine";
+        cn = DriverManager.getConnection(url, "root", "5277");
         return cn;
     }
 

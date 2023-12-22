@@ -18,7 +18,7 @@ public class PinChange {
         this.expdate = expdate;
         this.currentpin = currentpin;
         this.newpin = newpin;
-}
+    }
 
     public String getAccountnumber() {
         return accountnumber;
@@ -65,9 +65,5 @@ public class PinChange {
         return "PinChange [accountnumber=" + accountnumber + ", cardnumber=" + cardnumber + ", expdate=" + expdate
                 + ", currentpin=" + currentpin + ", newpin=" + newpin + "]";
     }
-
-    
- 
-
 
 }

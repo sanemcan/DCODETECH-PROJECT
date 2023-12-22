@@ -58,7 +58,6 @@ export class AccountCreationPageComponent implements OnInit {
       }
     }
   }
-
   onSubmit() {
     if (this.accountCreationForm.valid) {
       const accountData = this.accountCreationForm.value;
@@ -70,6 +69,7 @@ export class AccountCreationPageComponent implements OnInit {
 
           if (response.success) {
             console.log('Account created successfully:', response.message);
+            localStorage.setItem("Username",response.Username); //locastorage madhe set kela username mi response madhe jo aala ahe to
             alert("Account request has been sent successfully!");
             window.location.reload();
           } else {
@@ -83,5 +83,5 @@ export class AccountCreationPageComponent implements OnInit {
         }
       );
     }
-  }
+  } 
 }

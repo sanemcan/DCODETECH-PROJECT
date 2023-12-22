@@ -27,18 +27,18 @@ public class Chequereqdao {
             String query ="  INSERT INTO chequebook_req (first_name,middle_name,last_name,phone_no,email,date_of_req,account_type,bank_name,account_number,pin,starting_chequq_no,ending_chequq_no,leaves) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
             preparedStatement= connection.prepareStatement(query);
 
-             preparedStatement.setString(1, chequebookReq.getFirstName());
-             preparedStatement.setString(2, chequebookReq.getMiddleName());
-             preparedStatement.setString(3, chequebookReq.getLastName());
-             preparedStatement.setString(4, chequebookReq.getPhoneNo());
-             preparedStatement.setString(5, chequebookReq.getEmail());
+             preparedStatement.setString(1, chequebookReq.getFirstname());
+             preparedStatement.setString(2, chequebookReq.getMiddlename());
+             preparedStatement.setString(3, chequebookReq.getLastname());
+             preparedStatement.setString(4, chequebookReq.getPhoneno());
+             preparedStatement.setString(5, chequebookReq.getEmailid());
              preparedStatement.setString(6, chequebookReq.getDate());
-             preparedStatement.setString(7, chequebookReq.getAccountType());
-             preparedStatement.setString(8, chequebookReq.getBankName());
-             preparedStatement.setString(9, chequebookReq.getAccountNumber());
+             preparedStatement.setString(7, chequebookReq.getAccounttype());
+             preparedStatement.setString(8, chequebookReq.getBankname());
+             preparedStatement.setString(9, chequebookReq.getAccountnumber());
              preparedStatement.setString(10, chequebookReq.getPin());
-             preparedStatement.setString(11, chequebookReq.getStartingChequeno());
-             preparedStatement.setString(12, chequebookReq.getEndingChequeno());
+             preparedStatement.setString(11, chequebookReq.getStartingcheque());
+             preparedStatement.setString(12, chequebookReq.getEndingcheque());
              preparedStatement.setString(13, chequebookReq.getLeaves());
 
 
@@ -53,7 +53,7 @@ public class Chequereqdao {
             try {
                 if (preparedStatement != null)
                     preparedStatement.close();
-                DBUtils.closeConnection();
+                DBUtils.closeConnection();  
             } catch (SQLException e) {
                 e.printStackTrace();
 

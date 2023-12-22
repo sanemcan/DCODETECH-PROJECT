@@ -44,31 +44,30 @@ public class Pindao {
         }
     }
 
-    public boolean ifaccountExist(int accid) throws SQLException {
+    public boolean ifAccountAndPinMatch(int accid, String currentPin) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
         try {
 
             connection = DBUtils.openConnection();
-            String query = "Select * from account_details where id=?";
+            String query = "Select * from account_details where id=? and pin=?";
             preparedStatement = connection.prepareStatement(query);
 
             preparedStatement.setInt(1, accid);
+            preparedStatement.setString(2, currentPin);
 
             ResultSet rs = preparedStatement.executeQuery();
-            boolean accountIdExist = rs.next();
+            boolean accountAndPinMatch = rs.next();
             rs.close();
             DBUtils.closeConnection();
 
-            return accountIdExist;
+            return accountAndPinMatch;
 
         } catch (SQLException e) {
-            
             e.printStackTrace();
             return false;
         }
-
     }
 
 }
