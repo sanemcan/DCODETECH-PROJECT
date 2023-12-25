@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-account-creation-page',
@@ -10,7 +11,7 @@ import { UserService } from '../user.service';
 export class AccountCreationPageComponent implements OnInit {
   accountCreationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,private userService:UserService) { }
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -57,9 +58,6 @@ export class AccountCreationPageComponent implements OnInit {
       }
     }
   }
-   
-
-  //sagar ne dilela code paste here last yellow bracket cha varti
   onSubmit() {
     if (this.accountCreationForm.valid) {
       const accountData = this.accountCreationForm.value;
@@ -85,7 +83,5 @@ export class AccountCreationPageComponent implements OnInit {
         }
       );
     }
-  }
-
-
+  } 
 }

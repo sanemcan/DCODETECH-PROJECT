@@ -1,7 +1,6 @@
 package com.dcodetech.ATMMACHINE.pojo;
 
 public class AccountCreation {
-    // atmadhe sarv frontend che private variable banvle  with their datatype frontend cha navasarkha nko
     private String accountType;
     private String bankName;
     private String firstName;
@@ -14,38 +13,33 @@ public class AccountCreation {
     private String aadharCardNo;
     private String pin;
     private String passportPhotograph;
-     
 
-
-
-    
-    
     public AccountCreation() {
     }
 
-    public AccountCreation(String accountType, String bankName, String firstName, String middleName, String lastName,
-            String dateOfBirth, int age, String phoneNo, String email, String aadharCardNo, String pin,
-            String passportPhotograph) {
-                this.accountType = accountType;
-                this.bankName = bankName;
-                this.firstName = firstName;
-                this.middleName = middleName;
-                this.lastName = lastName;
-                this.dateOfBirth = dateOfBirth;
-                this.age = age;
-                this.phoneNo = phoneNo;
-                this.email = email;
-                this.aadharCardNo = aadharCardNo;
-                this.pin = pin;
-                this.passportPhotograph = passportPhotograph;
+    public AccountCreation(String accountType, String bankName, String firstName, String middleName,
+            String lastName, String dateOfBirth, int age, String phoneNo, String email,
+            String aadharCardNo, String pin, String passportPhotograph) {
+        this.accountType = accountType;
+        this.bankName = bankName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.age = age;
+        this.phoneNo = phoneNo;
+        this.email = email;
+        this.aadharCardNo = aadharCardNo;
+        this.pin = pin;
+        this.passportPhotograph = passportPhotograph;
     }
 
     public String getAccountType() {
         return accountType;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setAccountType(String acc) {
+        this.accountType = acc;
     }
 
     public String getBankName() {
@@ -138,14 +132,19 @@ public class AccountCreation {
 
     @Override
     public String toString() {
-        return "AccountCreation [accountType=" + accountType + ", bankName=" + bankName + ", firstName=" + firstName
-                + ", middleName=" + middleName + ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth + ", age="
-                + age + ", phoneNo=" + phoneNo + ", email=" + email + ", aadharCardNo=" + aadharCardNo + ", pin=" + pin
-                + ", passportPhotograph=" + passportPhotograph + "]";
+        return "AccountCreation{" +
+                "accountType='" + accountType + '\'' +
+                ", bankName='" + bankName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", age=" + age +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", email='" + email + '\'' +
+                ", aadharCardNo='" + aadharCardNo + '\'' +
+                ", pin='" + pin + '\'' +
+                ", passportPhotograph='" + passportPhotograph + '\'' +
+                '}';
     }
-    
-    
-   
-     
-
 }

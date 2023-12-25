@@ -1,73 +1,68 @@
 package com.dcodetech.ATMMACHINE.pojo;
 
 public class MoneyTransfer {
-    private int accountnumber;
-    private int recipientaccountnumber;
-    private int transactionamount;
-    // private String Date;
-    private int PIN;
-    private int phoneno;
+    private String accountnumber;
+    private String recipientaccountnumber;
+    private String transactionammount;
+    private String phoneno;
+    private String pin;
 
     public MoneyTransfer() {
     }
 
-    public MoneyTransfer(int accountnumber, int recipientaccountnumber, int transactionamount, int PIN, int phoneno) {
+    public MoneyTransfer(String accountnumber, String recipientaccountnumber, String transactionammount, String phoneno,
+            String pin) {
         this.accountnumber = accountnumber;
         this.recipientaccountnumber = recipientaccountnumber;
-        this.transactionamount = transactionamount;
-        this.PIN = PIN;
+        this.transactionammount = transactionammount;
         this.phoneno = phoneno;
+        this.pin = pin;
     }
 
-    public int getAccountnumber() {
+    public String getAccountnumber() {
         return accountnumber;
     }
 
-    public void setAccountnumber(int accountnumber) {
+    public void setAccountnumber(String accountnumber) {
         this.accountnumber = accountnumber;
     }
 
-    public int getRecipientaccountnumber() {
+    public String getRecipientaccountnumber() {
         return recipientaccountnumber;
     }
 
-    public void setRecipientaccountnumber(int recipientaccountnumber) {
+    public void setRecipientaccountnumber(String recipientaccountnumber) {
         this.recipientaccountnumber = recipientaccountnumber;
     }
 
-    public int getTransactionamount() {
-        return transactionamount;
+    public String getTransactionammount() {
+        return transactionammount;
     }
 
-    public void setTransactionamount(int transactionamount) {
-        this.transactionamount = transactionamount;
+    public void setTransactionammount(String transactionammount) {
+        this.transactionammount = transactionammount;
     }
 
-    public int getPIN() {
-        return PIN;
-    }
-
-    public void setPIN(int PIN) {
-       this. PIN = PIN;
-    }
-
-    public int getPhoneno() {
+    public String getPhoneno() {
         return phoneno;
     }
 
-    public void setPhoneno(int phoneno) {
+    public void setPhoneno(String phoneno) {
         this.phoneno = phoneno;
+    }
+
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
     }
 
     @Override
     public String toString() {
         return "MoneyTransfer [accountnumber=" + accountnumber + ", recipientaccountnumber=" + recipientaccountnumber
-                + ", transactionamount=" + transactionamount + ", PIN=" + PIN + ", phoneno=" + phoneno + "]";
+                + ", transactionammount=" + transactionammount + ", phoneno=" + phoneno + ", pin=" + pin + "]";
     }
 
-
-    
-
 }
-
-   

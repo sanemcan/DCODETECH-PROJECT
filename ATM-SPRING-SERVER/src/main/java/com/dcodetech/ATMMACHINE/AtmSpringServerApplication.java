@@ -13,8 +13,10 @@ public class AtmSpringServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AtmSpringServerApplication.class, args);
 	}
-@Bean
+
+	@Bean
 	    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
 	        return new JdbcTemplate(dataSource);
 	    }
+
 }

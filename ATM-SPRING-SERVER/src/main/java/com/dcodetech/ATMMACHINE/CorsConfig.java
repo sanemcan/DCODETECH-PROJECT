@@ -12,9 +12,9 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins("http://localhost:4200") // Allow requests from this origin //ikdun request yenar backend la
-            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allowed HTTP methods //konta metthod use hotil te lihla support konta kartil
-            .allowedHeaders("*") // Allowed headers (you can customize this)// he sagar udya sangel
+            .allowedOrigins("http://localhost:4200") // Allow requests from this origin
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allowed HTTP methods
+            .allowedHeaders("*") // Allowed headers (you can customize this)
             .allowCredentials(true); // Allow cookies if your application uses them
     }
 }
