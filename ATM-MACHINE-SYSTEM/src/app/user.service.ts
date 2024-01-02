@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, TransferState } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PinChangeComponent } from './pin-change/pin-change.component';
@@ -23,4 +23,7 @@ export class UserService {
     console.log('Transfer Data:', transferdata);
     return this.http.post(`${this.apiUrl}/money-transfer`, transferdata); //ikde component cha path ahe post mapping
   }
+
+  
+
 }
