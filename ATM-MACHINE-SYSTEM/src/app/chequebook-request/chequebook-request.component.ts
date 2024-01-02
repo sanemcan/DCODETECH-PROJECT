@@ -10,7 +10,8 @@ import { UserService } from '../user.service';
 })
 export class ChequebookRequestComponent implements OnInit {
   chequeReqform!: FormGroup;
-  constructor(private fd: FormBuilder , private userService: UserService) { }
+  chequeStatus: String | undefined;
+  constructor(private fd: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.chequereqform();
@@ -41,22 +42,27 @@ export class ChequebookRequestComponent implements OnInit {
 
   onSubmit() {
     if (this.chequeReqform.valid) {
-      const cheqreqdata = this.chequeReqform.value;
-      this.userService.chequeReq(cheqreqdata).subscribe(
-        (response: any) => {
-          console.log("response",response);
+      const checkdata = this.chequeReqform.value;
+      this.userService.chequeReq(checkdata).subscribe(
+        (response) => {
+          console.log(response);
           if (response.success === true) {
-            alert("Request Send  successfully");
+            alert("Cheque book request send successfully");
             window.location.reload();
           } else {
-            alert("Request Failed to Send");
+            if (response.message.includes("Pin not match")) {
+              alert(" pin does not exist");
+            } else {
+              alert("Pin not match");
+            }
           }
         },
         (error) => {
-          console.error("Error during Request:", error);
-          alert("An error occurred during Request");
+          console.log(error);
+          this.chequeStatus = 'Request Failed to Send';
+          alert("Request Failed to Send")
         }
-      );
+      )
     }
   }
 }

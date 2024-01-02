@@ -14,7 +14,7 @@ public class DBUtils {
             e.printStackTrace();
         }
         String url = "jdbc:mysql://localhost/atm_machine";
-        cn = DriverManager.getConnection(url, "root", "Sagar@2001");
+        cn = DriverManager.getConnection(url, "root", "5277");
         return cn;
     }
 

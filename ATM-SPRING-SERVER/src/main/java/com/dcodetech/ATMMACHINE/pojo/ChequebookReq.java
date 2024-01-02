@@ -11,7 +11,7 @@ public class ChequebookReq {
     private String date;
     private String accounttype;
     private String bankname;
-    private String accountnumber;
+    private int accountnumber;
     private String pin;
     private String startingcheque;
     private String endingcheque;
@@ -22,7 +22,7 @@ public class ChequebookReq {
     }
 
     public ChequebookReq(String firstname, String middlename, String lastname, String phoneno, String emailid,
-            String date, String accounttype, String bankname, String accountnumber, String pin, String startingcheque,
+            String date, String accounttype, String bankname, int accountnumber, String pin, String startingcheque,
             String endingcheque, String leaves) {
         this.firstname = firstname;
         this.middlename = middlename;
@@ -103,11 +103,11 @@ public class ChequebookReq {
         this.bankname = bankname;
     }
 
-    public String getAccountnumber() {
+    public int getAccountnumber() {
         return accountnumber;
     }
 
-    public void setAccountnumber(String accountnumber) {
+    public void setAccountnumber(int accountnumber) {
         this.accountnumber = accountnumber;
     }
 
@@ -150,11 +150,5 @@ public class ChequebookReq {
                 + ", bankname=" + bankname + ", accountnumber=" + accountnumber + ", pin=" + pin + ", startingcheque="
                 + startingcheque + ", endingcheque=" + endingcheque + ", leaves=" + leaves + "]";
     }
-
-  
-
-
-    
-
 
 }
