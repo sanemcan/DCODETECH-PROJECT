@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="../../assets/logo-no-background.svg" class="logo">
+            <ul>
+                <li><a (click)="navigateToLogin()">Login</a></li>
+                <li><a (click)="navigateToRegister()">Register</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Welcome to ATM!</h1>
+            <p>Easy cash withdrawl with minimum steps and <br>many more features at your fingertip.</p>
+            <div>
+                <button type="button" (click)="navigateToFeatures()"><span></span>Features</button>
+            </div>
+        </div>
+    </div>
+    <div id="atm-features" #atmFeatures class="features">
+        <h2>ATM Features</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="../../assets/acccreatesticker.png" class="sticker">
+                <h3>Account Creation</h3>
+                <p>Now no need to wait in long queues for creation of your bank account,just fill the details over here
+                    and get verified and account created</p>
+            </div>
+            <div class="card">
+                <img src="../../assets/moneytransfersticker.png" class="sticker">
+                <h3>Easy Money Transfer & Deposit</h3>
+                <p>Easily you can transfer the money to anyone and also deposit to your account.</p>
+            </div>
+            <div class="card">
+                <img src="../../assets/updatesticker.png" class="sticker">
+                <h3>Updating Details</h3>
+                <p>No need to wait for approval of getting your details updated just fill the form over here and get it
+                    done within short period of time</p>
+            </div>
+            <div class="card">
+                <img src="../../assets/txnsticker.png" class="sticker">
+                <h3>Transaction Details</h3>
+                <p>Get all the Transaction details</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -60,7 +60,14 @@ public class MoneyTransferController {
       response.put("message", "Money transfer failed.");
     }
 
+
+    // Update the balances in the response after successful money transfer
+    double senderBalance = accountService.getBalance(moneyTransfer.getAccountnumber());
+    double recipientBalance = accountService.getBalance(moneyTransfer.getRecipientaccountnumber());
+
+    response.put("senderBalance", senderBalance);
+    response.put("recipientBalance", recipientBalance);
+
     return new ResponseEntity<>(response, HttpStatus.OK);
   }
-
 }

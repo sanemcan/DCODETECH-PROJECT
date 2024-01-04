@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-change-phone-number-page',
@@ -8,7 +9,9 @@ import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
 })
 export class ChangePhoneNumberPageComponent implements OnInit {
   changePhoneNumberForm!: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  updatePhn: string | undefined;
+
+  constructor(private fb: FormBuilder,private userService:UserService) { }
   
   ngOnInit(): void {
     this.initializeForm();
@@ -22,16 +25,31 @@ export class ChangePhoneNumberPageComponent implements OnInit {
 
   initializeForm(): void {
     this.changePhoneNumberForm = this.fb.group({
-      accountnumber: ['', [Validators.required, Validators.pattern(/^\d{12}$/)]],
+      accountnumber: ['', [Validators.required]],
       previousphoneNo: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-      
-      phoneNo: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-     
-     
+      phoneNo: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],     
       pin: ['', [Validators.required, Validators.minLength(4)]],
      
     });
   
+  }
+
+  onSubmit(): void {
+    if (this.changePhoneNumberForm.valid) {
+      const pinChangeData = this.changePhoneNumberForm.value;
+      this.userService.updatePhn(pinChangeData).subscribe(
+        (response) => {
+          this.updatePhn = response;
+          alert("Phone No Updated Successfully!")
+          window.location.reload();
+        },
+        (error) => {
+          console.error('Error updating Phone No:', error);  
+          this.updatePhn = 'Failed to update Phone No';
+          alert("Invalid account ID or current pin")
+        }
+      );
+    }
   }
 }
 

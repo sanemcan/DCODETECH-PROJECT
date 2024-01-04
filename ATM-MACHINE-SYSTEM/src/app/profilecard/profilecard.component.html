@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+
+<body>
+    <div class="profile-box">
+        <img src="../../assets/pcard.svg" class="profile">
+        <h4>Welcome {{ user.username }}</h4>
+        <p class="fname">Firstname: {{ user.firstname }}</p>
+        <p>Lastname: {{ user.lastname }}</p>
+        <p>Email: {{ user.email }}</p>
+
+        <button type="button" (click)="onLogout()"><span></span>Sign Out</button>
+
+    </div>
+</body>
+
+</html>

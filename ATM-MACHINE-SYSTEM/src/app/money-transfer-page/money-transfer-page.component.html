@@ -9,10 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-
+<app-header></app-header>
 <body>
     <!-----------------------------------HEADER FOR Money Transfer----------------------------------------------------------------------->
-    <header>
+    <!-- <header>
         <div class="logo">
             <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
         </div>
@@ -24,7 +24,7 @@
                 <i class="fas fa-sign-out-alt"></i> Sign Out
             </a>
         </div>
-    </header>
+    </header> -->
 
 
     <!-------------------------ACCOUNT CREATION FORM----------------------------------------------------------------------------------------------------->
@@ -32,12 +32,13 @@
         <form [formGroup]="MoneyTransferForm" (ngSubmit)="onSubmit()">
             <table>
                 <tr>
-                    <th colspan="2">MONEY TRANSFER FORM</th>
+                    <th>MONEY TRANSFER FORM</th>
                 </tr>
                 <tr>
                     <td>
                         <label>Account Number</label>
-                        <input type="text" placeholder="Enter Your Account Number" formControlName="accountnumber">
+                        <input type="text" placeholder="Enter Your Account Number" formControlName="accountnumber"
+                            required>
                         <div *ngIf="MoneyTransferForm.get('accountnumber')?.hasError('required') && (MoneyTransferForm.get('accountnumber')?.touched || MoneyTransferForm.get('accountnumber')?.dirty)"
                             class="error">
                             Account Number is required.
@@ -49,7 +50,7 @@
                     <td>
                         <label>Recipient Account Number</label>
                         <input type="text" placeholder="Enter Recipient Account Number"
-                            formControlName="recipientaccountnumber">
+                            formControlName="recipientaccountnumber" required>
                         <div *ngIf="MoneyTransferForm.get('recipientaccountnumber')?.hasError('required') && (MoneyTransferForm.get('recipientaccountnumber')?.touched ||MoneyTransferForm.get('recipientaccountnumber')?.dirty)"
                             class="error">
                             Recipient Account number is required.
@@ -61,8 +62,8 @@
                 <tr>
                     <td>
                         <label>Transaction Ammount</label>
-                        <input type="text" placeholder="Enter Transaction Amount"
-                            formControlName="transactionammount">
+                        <input type="text" placeholder="Enter Transaction Amount" formControlName="transactionammount"
+                            required>
                         <div *ngIf="MoneyTransferForm.get('transactionammount')?.hasError('required') && (MoneyTransferForm.get('transactionammount')?.touched ||MoneyTransferForm.get('transactionammount')?.dirty)"
                             class="error">
                             Transaction Ammount is required.
@@ -74,7 +75,7 @@
                 <tr>
                     <td>
                         <label>PIN</label>
-                        <input type="password" placeholder="Enter PIN" formControlName="pin">
+                        <input type="password" placeholder="Enter PIN" formControlName="pin" required>
                         <div *ngIf="MoneyTransferForm.get('pin')?.hasError('required') && (MoneyTransferForm.get('pin')?.touched || MoneyTransferForm.get('pin')?.dirty)"
                             class="error">
                             PIN is required.
@@ -91,7 +92,7 @@
 
                     <td>
                         <label>Phone No</label>
-                        <input type="text" placeholder="Enter Phone No" formControlName="phoneno">
+                        <input type="text" placeholder="Enter Phone No" formControlName="phoneno" required>
                         <div *ngIf="MoneyTransferForm.get('phoneno')?.hasError('required') && (MoneyTransferForm.get('phoneno')?.touched || MoneyTransferForm.get('phoneno')?.dirty)"
                             class="error">
                             Phone No is required.
@@ -104,8 +105,11 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Transfer " [disabled]="!MoneyTransferForm.valid"
-                            [style.background-color]="registerButtonColor">
+                        <!-- Update your button element -->
+                        <input type="submit" value="Transfer">
+                        <div *ngIf="errorMessage" class="alert alert-danger" style="margin-top: 5px;">
+                            {{ errorMessage }}
+                          </div>
                     </td>
                 </tr>
             </table>

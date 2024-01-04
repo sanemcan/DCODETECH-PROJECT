@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 
-
 @Component({
   selector: 'app-money-transfer-page',
   templateUrl: './money-transfer-page.component.html',
@@ -10,17 +9,17 @@ import { UserService } from '../user.service';
 })
 export class MoneyTransferFormComponent implements OnInit {
   MoneyTransferForm!: FormGroup;
+  errorMessage: string = '';
 
-
-
-  constructor(private fb: FormBuilder, private userService: UserService) { }//yat quama deun private userService: UserService hi file user.service.ts import keli 
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.initializeForm();
   }
 
-  get registerButtonColor(): string {
-    return this.MoneyTransferForm.valid ? '#684497' : '#cfbce8';
+  isFieldInvalid(fieldName: string): boolean {
+    const field = this.MoneyTransferForm.get(fieldName);
+    return field?.invalid && (field?.touched || field?.dirty) || false!;
   }
 
   initializeForm(): void {
@@ -28,48 +27,37 @@ export class MoneyTransferFormComponent implements OnInit {
       accountnumber: ['', [Validators.required, Validators.pattern(/^\d{1}$/)]],
       recipientaccountnumber: ['', [Validators.required, Validators.pattern(/^\d{1}$/)]],
       transactionammount: ['', [Validators.required]],
-      // date: ['', Validators.required],
       pin: ['', [Validators.required, Validators.minLength(4)]],
       phoneno: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-
-
     });
   }
 
-
-  //ikde form submit sathi method karftoy money transfer jevha pn form submit hoil tevha hi method call hoil    
-
-
-  onSubmit() {
+  onSubmit(): void {
     if (this.MoneyTransferForm.valid) {
       const moneytransfervariable = this.MoneyTransferForm.value;
       this.userService.moneytransfer(moneytransfervariable).subscribe(
         (response: any) => {
-          console.log("response",response);
-          if (response.success.includes("true")) {
-            alert("Money transfer successfully");
-            // window.location.reload();
+          if (response.success === 'true') {
+            alert('Money transfer successfully');
+            window.location.reload();
           } else {
-            if (response.message.includes("Sender account ID does not exist.")) {
-              alert("Sender account ID does not exist");
-            } else if (response.message.includes("Recipient account ID does not exist.")) {
-              alert("Recipient account ID does not exist");
-            } else if (response.message.includes("Incorrect PIN for the sender's account")) {
-              alert("Incorrect PIN for the sender's account");
-            }
+            this.handleErrorResponse(response.message);
           }
         },
         (error) => {
-          console.error("Error during money transfer:", error);
-          alert("An error occurred during money transfer");
+          console.error('Money transfer failed:', error);
+          this.handleErrorResponse('An error occurred during money transfer');
         }
       );
     }
   }
 
-
-
-
+  private handleErrorResponse(message: string): void {
+    console.log('Received error message:', message);
+  
+    // Display the actual error message in the UI
+    this.errorMessage = `Error: ${message}`;
+  }
+  
+  
 }
-
-

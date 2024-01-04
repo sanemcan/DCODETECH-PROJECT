@@ -1,0 +1,80 @@
+.profile-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    z-index: 1000;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 50vh;
+}
+
+h4 {
+    margin-top: 30px;
+    color: #333;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.fname {
+    margin-top: 40px;
+}
+
+p {
+    color: #666;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.profile {
+    width: 50px;
+    height: auto;
+    margin-top: 10px;
+    filter: drop-shadow(5px 5px 5px gray);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    width: 100px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 1px solid #009688;
+    background: transparent;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+    color: #fff;
+}

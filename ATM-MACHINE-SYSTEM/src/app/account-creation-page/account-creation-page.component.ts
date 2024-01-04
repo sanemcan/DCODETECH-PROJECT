@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../AuthService';
 
 @Component({
   selector: 'app-account-creation-page',
@@ -10,6 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AccountCreationPageComponent implements OnInit {
   accountCreationForm!: FormGroup;
+  showProfileBox: boolean = false;
 
   constructor(private fb: FormBuilder, private userService: UserService) { }
 
@@ -69,7 +71,7 @@ export class AccountCreationPageComponent implements OnInit {
 
           if (response.success) {
             console.log('Account created successfully:', response.message);
-            localStorage.setItem("Username",response.Username); //locastorage madhe set kela username mi response madhe jo aala ahe to
+            localStorage.setItem("Username", response.Username); //locastorage madhe set kela username mi response madhe jo aala ahe to
             alert("Account request has been sent successfully!");
             window.location.reload();
           } else {
@@ -83,5 +85,6 @@ export class AccountCreationPageComponent implements OnInit {
         }
       );
     }
-  } 
+  }
+
 }

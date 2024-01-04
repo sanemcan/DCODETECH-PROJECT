@@ -22,27 +22,30 @@ h1{
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
-    /* background: hsla(141, 43%, 62%, 1);
-
-    background: linear-gradient(90deg, hsla(141, 43%, 62%, 1) 0%, hsla(73, 72%, 75%, 1) 99%, hsla(0, 0%, 92%, 1) 100%);
-
-    background: -moz-linear-gradient(90deg, hsla(141, 43%, 62%, 1) 0%, hsla(73, 72%, 75%, 1) 99%, hsla(0, 0%, 92%, 1) 100%);
-
-    background: -webkit-linear-gradient(90deg, hsla(141, 43%, 62%, 1) 0%, hsla(73, 72%, 75%, 1) 99%, hsla(0, 0%, 92%, 1) 100%); */
-
-
 }
 
 .home .wlcmimg {
     flex: 1 1 300px;
     text-align: center;
     margin-top: -150px;
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeIn 1s ease-out forwards; /* Apply the fadeIn animation */
+}
+
+/* Define the fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .home .wlcmimg img {
-    width: 80%;
-
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px; /* Adjust this based on your design */
+    height: auto;
 }
 
 .home .content {
@@ -122,4 +125,44 @@ footer {
     text-decoration: none;
     margin: 0 15px;
     font-size: 20px;
+}
+
+
+
+/* media query */
+@media screen and (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    body {
+        font-size: 14px;
+    }
+
+    .home {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .home .wlcmimg,
+    .home .content {
+        flex: 1 1 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Styles for screens up to 480px wide */
+    h1 {
+        font-size: 24px;
+    }
+
+    .home .content p {
+        font-size: medium;
+    }
+
+    .right-options a {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
 }

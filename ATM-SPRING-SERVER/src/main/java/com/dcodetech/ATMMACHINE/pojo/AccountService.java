@@ -20,8 +20,9 @@ public class AccountService {
             preparedStatement.setString(1, accountNumber);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    int count = resultSet.getInt(1);
-                    return count > 0;
+                    String count = resultSet.getString(1);
+                    return count != null && count.trim().equals(count != null ? count.trim() : null);
+                    // return count > 0;
                 }
             }
         } catch (SQLException e) {
@@ -32,7 +33,8 @@ public class AccountService {
 
     public boolean isCorrectPin(String accountNumber, String enteredPin) {
         try (Connection connection = DBUtils.openConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT pin FROM account_details WHERE id = ?")) {
+                PreparedStatement preparedStatement = connection
+                        .prepareStatement("SELECT pin FROM account_details WHERE id = ?")) {
             preparedStatement.setString(1, accountNumber);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
@@ -48,10 +50,38 @@ public class AccountService {
         }
         return false;
     }
-    
-    
 
     public boolean doesAccountsExist(String senderAccountNumber, String recipientAccountNumber) {
         return doesAccountExist(senderAccountNumber) && doesAccountExist(recipientAccountNumber);
+    }
+
+    public double getBalance(String accountNumber) {
+        try (
+                Connection connection = DBUtils.openConnection();
+                PreparedStatement preparedStatement = connection
+                        .prepareStatement("SELECT balance FROM account_details WHERE id = ?")) {
+            preparedStatement.setString(1, accountNumber);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getDouble("balance");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0.0; // Return a default value or handle the case appropriately
+    }
+
+    public void updateBalance(String accountNumber, double newBalance) {
+        try (
+                Connection connection = DBUtils.openConnection();
+                PreparedStatement preparedStatement = connection
+                        .prepareStatement("UPDATE account_details SET balance = ? WHERE id = ?")) {
+            preparedStatement.setDouble(1, newBalance);
+            preparedStatement.setString(2, accountNumber);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

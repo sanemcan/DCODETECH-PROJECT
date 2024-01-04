@@ -6,17 +6,21 @@ public class MoneyTransfer {
     private String transactionammount;
     private String phoneno;
     private String pin;
+    private String date;
+    private String status;
 
     public MoneyTransfer() {
     }
 
     public MoneyTransfer(String accountnumber, String recipientaccountnumber, String transactionammount, String phoneno,
-            String pin) {
+            String pin, String date, String status) {
         this.accountnumber = accountnumber;
         this.recipientaccountnumber = recipientaccountnumber;
         this.transactionammount = transactionammount;
         this.phoneno = phoneno;
         this.pin = pin;
+        this.date = date;
+        this.status = status;
     }
 
     public String getAccountnumber() {
@@ -57,6 +61,24 @@ public class MoneyTransfer {
 
     public void setPin(String pin) {
         this.pin = pin;
+    }
+
+
+    
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

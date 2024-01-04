@@ -20,6 +20,10 @@ import { AccountCreationPageComponent } from './account-creation-page/account-cr
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { MoneyTransferFormComponent } from './money-transfer-page/money-transfer-page.component';
 import { ChangePhoneNumberPageComponent } from './change-phone-number-page/change-phone-number-page.component';
+import { WelcomepagefinalComponent } from './welcomepagefinal/welcomepagefinal.component';
+import { ProfilecardComponent } from './profilecard/profilecard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { ChangePhoneNumberPageComponent } from './change-phone-number-page/chang
     LoginPageComponent,
     RegisterPageComponent,
     MoneyTransferFormComponent,
-    ChangePhoneNumberPageComponent
+    ChangePhoneNumberPageComponent,
+    WelcomepagefinalComponent,
+    ProfilecardComponent,
+    PageNotFoundComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

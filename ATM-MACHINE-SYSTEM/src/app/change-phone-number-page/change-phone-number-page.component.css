@@ -25,7 +25,7 @@ body {
     max-width: 600px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 table {
@@ -139,8 +139,7 @@ input[type="submit"] {
 }
 
 /************************Header Styles************************/
-header {
-    /* background-color: #52b788; */
+/* header {
     background:linear-gradient(90deg, rgb(87, 85, 126) 0%, rgb(104, 68, 151) 35%, rgb(136, 207, 221) 100%); 
     padding: 15px;
     color: #fff;
@@ -171,7 +170,7 @@ header {
 
 .right-options a i {
     margin-right: 10px;
-}
+} */
 
 /****************************Footer Styles**************************/
 footer {

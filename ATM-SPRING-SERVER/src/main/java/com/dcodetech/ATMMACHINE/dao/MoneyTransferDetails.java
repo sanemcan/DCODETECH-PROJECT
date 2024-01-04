@@ -37,6 +37,27 @@ public class MoneyTransferDetails {
                 return false;
             }
 
+             // Get the current balances of the sender and recipient accounts
+             double senderBalance = accountService.getBalance(moneyTransfer.getAccountnumber());
+             double recipientBalance = accountService.getBalance(moneyTransfer.getRecipientaccountnumber());
+ 
+             // Check if the sender has enough balance for the transfer
+             double transactionAmount = Double.parseDouble(moneyTransfer.getTransactionammount());
+             if (senderBalance < transactionAmount) {
+                 System.out.println("Insufficient funds in the sender's account.");
+                 return false;
+             }
+ 
+             // Update the balances
+             double newSenderBalance = senderBalance - transactionAmount;
+             double newRecipientBalance = recipientBalance + transactionAmount;
+ 
+             // Update sender's balance in the database
+             accountService.updateBalance(moneyTransfer.getAccountnumber(), newSenderBalance);
+ 
+             // Update recipient's balance in the database
+             accountService.updateBalance(moneyTransfer.getRecipientaccountnumber(), newRecipientBalance);
+
             String query = "INSERT INTO money_transfer(account_number, Recipient_account_no, transaction_amount ,pin, phone_no, status) VALUES (?, ?, ?, ?, ?, ?)";
 
             preparedStatement = connection.prepareStatement(query);
@@ -47,6 +68,7 @@ public class MoneyTransferDetails {
             preparedStatement.setString(4, moneyTransfer.getPin());
             preparedStatement.setString(5, moneyTransfer.getPhoneno());
             preparedStatement.setString(6, "successful"); // i want to set the status as "pending" initially
+          
 
             System.out.println("MoneyTransfer details: " + moneyTransfer);
             int rowsAffected = preparedStatement.executeUpdate();
@@ -58,7 +80,7 @@ public class MoneyTransferDetails {
             try {
                 if (preparedStatement != null)
                     preparedStatement.close();
-                DBUtils.closeconnection();
+                DBUtils.closeConnection();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

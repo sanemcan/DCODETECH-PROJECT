@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Creation Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <style>
-        /*************************Global Styles***********************/
-
-    </style>
 </head>
+<app-header></app-header>
 
 <body>
     <!-----------------------------------HEADER---------------------->
-    <header>
+    <!-- <header>
         <div class="logo">
             <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
         </div>
@@ -27,25 +26,25 @@
                 <i class="fas fa-sign-out-alt"></i> Sign Out
             </a>
         </div>
-    </header>
+    </header> -->
 
 
     <!------------------------ CHEQUE BOOK REQUEST FORM-------------------------------------->
     <div class="container">
-        <form [formGroup]="chequeReqform">
+        <form [formGroup]="chequeReqform" (ngSubmit)="onSubmit()">
             <table>
                 <tr>
                     <th colspan="2">CHEQUE BOOK REQUEST FORM</th>
                 </tr>
-               
+
 
                 <tr>
                     <td>
                         <label>First Name</label>
-                        <input type="text" placeholder="First Name" formControlName="firstname">  
+                        <input type="text" placeholder="First Name" formControlName="firstname">
                         <div *ngIf="chequeReqform.get('firstname')?.hasError('required') && (chequeReqform.get('firstname')?.touched || chequeReqform.get('firstname')?.dirty)"
                             class="error">
-                           First Name  is required.
+                            First Name is required.
                         </div>
                     </td>
                     <td>
@@ -53,7 +52,7 @@
                         <input type="text" placeholder="Middle Name" formControlName="middlename">
                         <div *ngIf="chequeReqform.get('middlename')?.hasError('required') && (chequeReqform.get('middlename')?.touched || chequeReqform.get('middlename')?.dirty)"
                             class="error">
-                            Middle Name  is required.
+                            Middle Name is required.
                         </div>
                     </td>
                 </tr>
@@ -64,48 +63,48 @@
                         <input type="text" placeholder="Last Name" formControlName="lastname">
                         <div *ngIf="chequeReqform.get('lastname')?.hasError('required') && (chequeReqform.get('lastname')?.touched || chequeReqform.get('lastname')?.dirty)"
                             class="error">
-                            Last Name  is required.
+                            Last Name is required.
                         </div>
-                       
+
                     </td>
                     <td>
                         <label>Phone no</label>
-                        <input type="text" placeholder="Phone No"formControlName="phoneno">  
+                        <input type="text" placeholder="Phone No" formControlName="phoneno">
                         <div *ngIf="chequeReqform.get('phoneno')?.hasError('required') && (chequeReqform.get('phoneno')?.touched || chequeReqform.get('phoneno')?.dirty)"
                             class="error">
-                           Phone number  is required.
+                            Phone number is required.
                         </div>
                     </td>
-                    
+
                 </tr>
 
                 <tr>
                     <td>
                         <label>Email Id</label>
-                        <input type="email" placeholder="Enter Email"formControlName="emailid">
+                        <input type="email" placeholder="Enter Email" formControlName="emailid">
                         <div *ngIf="chequeReqform.get('emailid')?.hasError('required') && (chequeReqform.get('emailid')?.touched || chequeReqform.get('emailid')?.dirty)"
                             class="error">
-                           Email Id  is required.
+                            Email Id is required.
                         </div>
                     </td>
 
                     <td>
                         <label>Date</label>
-                        <input type="date"formControlName="date" >
+                        <input type="date" formControlName="date">
                         <div *ngIf="chequeReqform.get('date')?.hasError('required') && (chequeReqform.get('date')?.touched || chequeReqform.get('date')?.dirty)"
                             class="error">
-                           Date  is required.
+                            Date is required.
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Account Type</label>
-                        <select name="AccountType" formControlName="accounttype"  >
-                            <option value=""  >Select Account Type</option>
+                        <select name="AccountType" formControlName="accounttype">
+                            <option value="">Select Account Type</option>
                             <option>Personal</option>
-                            <option>Business</option>    
-                        </select> 
+                            <option>Business</option>
+                        </select>
                         <div *ngIf="chequeReqform.get('accounttype')?.hasError('required') && (chequeReqform.get('accounttype')?.touched || chequeReqform.get('accounttype')?.dirty)"
                             class="error">
                             Account type is required.
@@ -118,13 +117,13 @@
                             class="error">
                             Bank Name is required.
                         </div>
-                        
+
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Account Number</label>
-                        <input type="text" placeholder="Enter Account Number" formControlName="accountnumber">  
+                        <input type="text" placeholder="Enter Account Number" formControlName="accountnumber">
                         <div *ngIf="chequeReqform.get('accountnumber')?.hasError('required') && (chequeReqform.get('accountnumber')?.touched || chequeReqform.get('accountnumber')?.dirty)"
                             class="error">
                             Account Number is required.
@@ -133,7 +132,7 @@
 
                     <td>
                         <label>Pin</label>
-                        <input type="text" placeholder="Enter Pin" formControlName="pin">  
+                        <input type="text" placeholder="Enter Pin" formControlName="pin">
                         <div *ngIf="chequeReqform.get('pin')?.hasError('required') && (chequeReqform.get('pin')?.touched || chequeReqform.get('pin')?.dirty)"
                             class="error">
                             Pin is required.
@@ -153,7 +152,7 @@
 
                     <td>
                         <label>Ending Cheque Number </label>
-                        <input type="text" placeholder="Ending Cheque Number"formControlName="endingcheque" >
+                        <input type="text" placeholder="Ending Cheque Number" formControlName="endingcheque">
                         <div *ngIf="chequeReqform.get('endingcheque')?.hasError('required') && (chequeReqform.get('endingcheque')?.touched || chequeReqform.get('endingcheque')?.dirty)"
                             class="error">
                             Ending Cheque Number type is required.
@@ -167,8 +166,8 @@
                         <select name="No of Leaves" formControlName="leaves">
                             <option>10</option>
                             <option>20</option>
-                            <option>50</option>    
-                            <option>100</option>  
+                            <option>50</option>
+                            <option>100</option>
                         </select>
                         <div *ngIf="chequeReqform.get('leaves')?.hasError('required') && (chequeReqform.get('leaves')?.touched || chequeReqform.get('leaves')?.dirty)"
                             class="error">
@@ -177,12 +176,12 @@
                     </td>
                 </tr>
 
-            
+
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Send Request"   [disabled]="!chequeReqform.valid"
-                        [style.background-color]="chequereqbtn">
+                        <input type="submit" value="Send Request" [disabled]="!chequeReqform.valid"
+                            [style.background-color]="chequereqbtn">
                     </td>
                 </tr>
             </table>

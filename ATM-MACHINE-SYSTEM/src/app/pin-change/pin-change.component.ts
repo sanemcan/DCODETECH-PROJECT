@@ -48,8 +48,5 @@ export class PinChangeComponent implements OnInit {
     }
   }
   
-  
-  
-  
 }
 
