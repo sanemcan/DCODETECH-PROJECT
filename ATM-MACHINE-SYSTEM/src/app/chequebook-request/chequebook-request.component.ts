@@ -25,17 +25,16 @@ export class ChequebookRequestComponent implements OnInit {
     this.chequeReqform = this.fd.group({
       accounttype: ['', Validators.required],
       firstname: ['', Validators.required],
-
       middlename: ['', Validators.required],
       lastname: ['', Validators.required],
-      phoneno: ['', Validators.required],
-      emailid: ['', Validators.required],
+      phoneno: ['',[ Validators.required ,Validators.pattern(/^\d{10}$/)]],
+      emailid: ['',[ Validators.required ,Validators.email]],
       date: ['', Validators.required],
       bankname: ['', Validators.required],
       accountnumber: ['', Validators.required],
-      pin: ['', Validators.required],
-      startingcheque: ['', Validators.required],
-      endingcheque: ['', Validators.required],
+      pin: ['',[ Validators.required,Validators.pattern(/^\d{4}$/)]],
+      startingcheque: ['', [ Validators.required,Validators.maxLength(4)]],
+      endingcheque: ['',[ Validators.required,Validators.maxLength(4)]],
       leaves: ['', Validators.required],
     })
   }
