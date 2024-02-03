@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class dbutils {
+public class DBUtils {
     private static Connection cn;
 
     public static Connection openConnection() throws SQLException {
@@ -14,7 +14,7 @@ public class dbutils {
             e.printStackTrace();
         }
         String url = "jdbc:mysql://localhost/atm_machine";
-        cn = DriverManager.getConnection(url, "root", "5277");
+        cn = DriverManager.getConnection(url, "root", "Sagar@2001");
         return cn;
     }
 
