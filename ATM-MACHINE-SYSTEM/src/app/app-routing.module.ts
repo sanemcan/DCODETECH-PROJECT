@@ -11,6 +11,11 @@ import { FooterComponent } from './footer/footer.component';
 import { PinChangeComponent } from './pin-change/pin-change.component';
 import { ChequebookRequestComponent } from './chequebook-request/chequebook-request.component';
 
+import { MoneyTransferFormComponent } from './money-transfer-page/money-transfer-page.component';
+import { ChangePhoneNumberPageComponent } from './change-phone-number-page/change-phone-number-page.component';
+import { ChequebookreqStatusComponent } from './chequebookreq-status/chequebookreq-status.component';
+import { ChequebookreqDataComponent } from './chequebookreq-data/chequebookreq-data.component';
+
 const routes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'account', component: AccountCreationPageComponent },
@@ -21,12 +26,10 @@ const routes: Routes = [
   { path: 'Register', component: RegisterPageComponent },
   { path: 'Login', component: LoginPageComponent },
   { path: 'Moneytransfer', component: MoneyTransferFormComponent },
-  { path: 'Changephonenumber', component: ChangePhoneNumberPageComponent }
-
-
+  { path: 'Changephonenumber', component: ChangePhoneNumberPageComponent },
+  { path: 'Chequebookreqtstatus', component: ChequebookreqStatusComponent},
+  { path: 'Chequebookreqtdata', component: ChequebookreqDataComponent}
 ];
-import { MoneyTransferFormComponent } from './money-transfer-page/money-transfer-page.component';
-import { ChangePhoneNumberPageComponent } from './change-phone-number-page/change-phone-number-page.component';
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

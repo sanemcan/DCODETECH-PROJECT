@@ -20,6 +20,8 @@ import { AccountCreationPageComponent } from './account-creation-page/account-cr
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { MoneyTransferFormComponent } from './money-transfer-page/money-transfer-page.component';
 import { ChangePhoneNumberPageComponent } from './change-phone-number-page/change-phone-number-page.component';
+import { ChequebookreqStatusComponent } from './chequebookreq-status/chequebookreq-status.component';
+import { ChequebookreqDataComponent } from './chequebookreq-data/chequebookreq-data.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ChangePhoneNumberPageComponent } from './change-phone-number-page/chang
     LoginPageComponent,
     RegisterPageComponent,
     MoneyTransferFormComponent,
-    ChangePhoneNumberPageComponent
+    ChangePhoneNumberPageComponent,
+    ChequebookreqStatusComponent,
+    ChequebookreqDataComponent
   ],
   imports: [
     BrowserModule,

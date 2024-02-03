@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        /*************************Global Styles***********************/
+    </style>
+</head>
+
+<body>
+    <!-----------------------------------HEADER---------------------->
+    <header>
+        <div class="logo">
+            <img src="../../assets/logo-no-background.svg" alt="Logo" id="logo">
+        </div>
+        <div class="right-options">
+            <a href="#" title="Sign Up">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" title="Login">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </a>
+        </div>
+    </header>
+    <!------------------------ CHEQUE BOOK REQUEST  STATUS FORM-------------------------------------->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Account ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example Data, replace this with actual data -->
+            <!-- <tr>
+                <td>1</td>
+                <td>Nishant</td>
+                <td>Shingole</td>
+                <td><button class="view-button">View</button></td>
+                <td><button class="approve-button">Approve</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sagar</td>
+                <td>Misal</td>
+                <td><button class="view-button">View</button></td>
+                <td><button class="approve-button">Approve</button></td>
+            </tr> -->
+            <!-- Add more rows as needed -->
+
+            <tr th:each="request : ${chequebookRequests}">
+                <td th:text="${request.accountnumber}"></td>
+                <td th:text="${request.firstname}"></td>
+                <td th:text="${request.lastname}"></td>
+                <td>
+                    <button class="view-button">View</button>
+                </td>
+                <td>
+                    <button class="approve-button">Approve</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+ 
+    <!-----------------------------------FOOTER---------------------->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 DcodeTech. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
