@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBUtils {
+public class dbutils {
     private static Connection cn;
 
     public static Connection openConnection() throws SQLException {
